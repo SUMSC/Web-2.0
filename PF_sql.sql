@@ -16,6 +16,16 @@ create table repairmen(
     
 )engine=InnoDB default charset=utf8;
 
+create table faq(
+
+	qid int unsigned auto_increment,
+	ask varchar(1024),
+	question varchar(2048),
+	primary key(qid)
+	
+)engine=InnoDB auto_increment=1 default charset=utf8;
+
+
 create table consult(
 
 	cid int unsigned auto_increment,

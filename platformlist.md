@@ -1,6 +1,6 @@
 ##PLATFORM FUNCTION LIST##
 * 咨询
-	* tipsSelect()　|　Model类，无参数，返回数组，数组里是键值对，该返回值为后台添加的FAQ
+	* tipsSelect()　|　Model类，无参数，返回二维数组，数组里是键值对，该返回值为后台添加的FAQ;如果失败则返回0.
 	* pageShow()　|　View类，无参数，无返回值。展示页面：bar、FAQ、表单、table、footer。
 	* consultInsert($data)　|　Model类，参数为add()提供的键值对数组，将各个键值对解析并存入数据库。
  	* consult()　|　Control类，参数暂无，无返回值。将从tipsSelect()中返回数组里的每一个键值对解析，并调用pageShow()显示页面。
@@ -16,7 +16,10 @@
 	* repairmanInsert($data)　|　Model类，参数为一个二维键值对数组，将维修人员信息插入数据库。
 	* repairmanDelete($rid)　|　Model类，参数为一个整数，从数据库删除对应人员的条目。
 	* consultSelect()　|　Model类，无参数，返回维修者信息。
-	* repairmenShow($repairman)　|　View类，参数为二维数组，展示维修人员修改页面。
+	* tipsInsert($data)　|　Model类，参数为一个二维键值对数组，将一条FAQ插入数据库，返回一个PDOstatement对象。
+	* tipsDelete($rid)　|　Model类，参数为一个整数，从数据库删除对应的FAQ条目。
+	* tipsUpdate($faq,$qid)　|　Model类，参数为faq键值对和$qid，从数据库删除对应的FAQ条目。
+	* repairmenShow($repairman)　|　View类，参数为，维数组，展示维修人员修改页面，返回一个PDOstatement对象。
 	* consultShow($consult)　|　View类，参数为二维数组，展示维修记录。
 	* backstage($action)　|　Control类，$action控制展示repairmen还是consult。
 	* repairmanInsert()　|　Control类，调用Model类的repairmanInsert()，操作成功后刷新页面。

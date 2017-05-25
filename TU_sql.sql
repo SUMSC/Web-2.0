@@ -7,7 +7,7 @@ use INFORMATION;
 create table files(
 
 	    username varchar(32),  -- 用户名
-	    administration varchar(4),  -- 用户对该文件的管理权限
+	    admin varchar(4),  -- 用户对该文件的管理权限
 	    filename varchar(50),
 	    filedirectory varchar(50),  -- 位置
 	    uploadtime DATETIME,  -- 上传时间

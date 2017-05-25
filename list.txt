@@ -1,0 +1,29 @@
+1.展示页面:
+        
+        Activity() control类 获取Activityselect()返回的二维数组 传给Activityshow展示
+        Activityselect() Model类从数据库中提取记录并返回包含活动信息的键值对数组        
+        Activityshow($data) view类 参数为二维数组 展示活动信息
+        Showpage() view类加载 header footer content
+2.活动：
+         报名：
+         Submit($data)     Model类在数据库中存入报名信息 参数为submitshow返回的数组 接受键值对数组 解析后存入数据库中
+         Render(“index”)  view类 报名成功后跳转页面
+         Submitshow() view类 展示报名页面 返回值为键值对数组
+
+         添加：
+         
+          Activityinsert()  Model类在数据库中存入添加的活动信息 接受键值对数组 解析后存入数据库中
+          Activityadd()  view类 展示活动添加页面 返回值为键值对数组
+          Render(“index”)  view类 添加成功后跳转页面
+
+3.管理后台
+          Activityselect()  Model类 返回活动信息
+          Activityinsert($data)  Model类 参数接受一个二维键值对数组，将活动信息插入数据库
+          Activityselect() Model类从数据库中提取记录并返回包含活动信息的键值对数组 
+         Submitselect()  Model类返回报名者信息
+
+         Activitydelet($rid)  Model类 参数作为一个整数 从数据库中删除活动信息条目
+         Activity() control类 获取Activityselect()返回的二维数组 传给Activityshow展示
+        
+         Activityshow($data)  view类 参数为二维数组 展示活动信息
+         

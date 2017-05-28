@@ -1,10 +1,15 @@
-drop database if exists `Web`;
+drop database if exists `MSC`;
 
-create database `Web` default character set utf8 COLLATE utf8_general_ci ;
+create database `MSC` default character set utf8 COLLATE utf8_general_ci ;
 
-use `Web`;
+use `MSC`;
 
-create table repairmen(
+
+/* 
+    PF Part
+*/
+
+create table pfRepairmen(
 
 	rid int unsigned auto_increment,
 	name varchar(32),
@@ -16,7 +21,7 @@ create table repairmen(
     
 )engine=InnoDB default charset=utf8;
 
-create table faq(
+create table pfFaq(
 
 	qid int unsigned auto_increment,
 	ask varchar(1024),
@@ -26,7 +31,7 @@ create table faq(
 )engine=InnoDB auto_increment=1 default charset=utf8;
 
 
-create table consult(
+create table pfConsult(
 
 	cid int unsigned auto_increment,
 	rid int NOT NULL, 
@@ -38,3 +43,66 @@ create table consult(
 	
 )engine=InnoDB auto_increment=1 default charset=utf8;
 
+
+/*
+        ACT Part
+*/
+
+create table actAct(
+
+id varchar(20),
+name varchar(32),
+dcp varchar(2048),
+actime varchar(2048),
+actsite varchar(2048),
+sponsornm varchar(32),
+spemail varchar(64),
+sptel varchar(32),
+spqq varchar(32),
+
+role int default '0',
+
+primary key(name)
+)engine=InnoDB default charset=utf8;
+
+create table actApplicant(
+
+id varchar(20),
+appname varchar(32),
+appemail varchar(64),
+sex varchar(16),
+apptel varchar(32),
+appqq varchar(32),
+
+role int default '0',
+
+primary key(appname)
+
+)engine=InnoDB default charset=utf8;
+
+
+/*
+    TU Part
+*/
+
+
+create table tuFiles(
+
+	    username varchar(32),  -- 用户名
+	    admin varchar(4),  -- 用户对该文件的管理权限
+	    filename varchar(64),
+	    filedirectory varchar(64),  -- 位置
+	    uploadtime DATETIME,  -- 上传时间
+	    changetime DATETIME,   -- 更改时间
+	    fileid int auto_increment,
+	    filetype varchar(5),   -- 文件类型(格式)
+	    remarks varchar(128),   -- 标记备注啥的
+
+        primary key(fileid)
+
+)engine=InnoDB default charset=utf8;
+
+
+/* 
+    GT Part
+*/

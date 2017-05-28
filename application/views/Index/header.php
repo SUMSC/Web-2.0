@@ -36,7 +36,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="<?php echo APP_URL?>/">Link <span class="sr-only">(current)</span></a></li>
         <li><a href="#">Link</a></li>
@@ -75,7 +75,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
+<!--
 <div id="body">
 <h2>Hello</h2>
 <h2>Hello</h2>
@@ -94,8 +94,9 @@
 <h2>Hello</h2>
 
 </div>
-
 <div id="footer">
     <div class="center"> 
     </div>
 </div>
+
+-->

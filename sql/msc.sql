@@ -120,7 +120,8 @@ create table gtSoftware(
 	href varchar(128),
 
 	primary key(name)
-	)engine=InnoDB default charset=utf8;
+
+)engine=InnoDB default charset=utf8;
 
 create table gtWeb(
 	
@@ -128,5 +129,5 @@ create table gtWeb(
 	href varchar(128),
 
 	primary key(name)
-	)engine=InnoDB default charset=utf8;
+)engine=InnoDB default charset=utf8;
 

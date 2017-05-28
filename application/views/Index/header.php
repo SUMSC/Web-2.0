@@ -76,26 +76,8 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div id="body">
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
-<h2>Hello</h2>
 
-</div>
-<div id="footer">
-    <div class="center"> 
-    </div>
-</div>
+
+<div id="body">
+
 

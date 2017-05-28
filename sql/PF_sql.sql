@@ -105,4 +105,28 @@ create table tuFiles(
 
 /* 
     GT Part
+
 */
+create table gtBook(
+	
+	name varchar(128),
+	href varchar(128),
+
+	primary key(name)
+	)engine=InnoDB default charset=utf8;
+create table gtSoftware(
+	
+	name varchar(128),
+	href varchar(128),
+
+	primary key(name)
+	)engine=InnoDB default charset=utf8;
+
+create table gtWeb(
+	
+	name varchar(128),
+	href varchar(128),
+
+	primary key(name)
+	)engine=InnoDB default charset=utf8;
+

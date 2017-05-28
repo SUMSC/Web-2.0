@@ -107,13 +107,23 @@ create table tuFiles(
     GT Part
 
 */
+create table Growth(
+	
+	name varchar(128),
+	href varchar(128),
+
+	primary key(name)
+
+)engine=InnoDB default charset=utf8;
 create table gtBook(
 	
 	name varchar(128),
 	href varchar(128),
 
 	primary key(name)
-	)engine=InnoDB default charset=utf8;
+
+)engine=InnoDB default charset=utf8;
+
 create table gtSoftware(
 	
 	name varchar(128),

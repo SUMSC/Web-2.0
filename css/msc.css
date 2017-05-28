@@ -3,11 +3,83 @@
  *  类名命名为： PartName(小写)+名称
  */
 
-body{
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+html, body{
+    font-family: sans-serif;
     font-size: 16px;
-    padding-top: 80px;
     background-image:url(../images/weather.png);
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+
 }
 
+a{
+    color: #000;
+}
+/*
+ * Header 
+ */
+#header{
+   /* background: #222329;*/
+    border-radius: 0px;
+    height: 80px;
+    padding: 15px 20px;
+    font-size: 1.1em;
+}
+#header .icon-bar{
+    background-color: #DDD;
+}
+
+#header .logo{
+    height: 45px;
+    display: inline;
+
+}
+#header .logo-tag{
+    margin-left: 5px;
+    font-size: 1.5em;
+    color: #979cb5;
+}
+#header .brand{
+    margin: -15px 0px;
+}
+#header li a:hover, a:active, a:visited{
+    background-color: transparent;
+    border-bottom: 3px solid #42a5f5;
+}
+
+/*
+ *   Footer
+ */ 
+#footer{
+    padding: 4rem;
+    background-color: #36b1da; 
+    height: 350px;
+    width: 100%;
+    bottom: 0px;
+}
+#footer .center{
+    margin-right: auto;
+    margin-left: auto;
+    color: #FFF;
+    text-align: center;
+}
+
+
+/*
+ *   Body
+ */
+
+#body{
+    max-width: 1024px;
+    word-wrap:break-word;
+    word-break: break-all;
+    margin: auto auto;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right:20px;
+    background: #FFF;
+}
 

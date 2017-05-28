@@ -1,0 +1,13 @@
+/*
+ *  MSC 网站的样式表，
+ *  类名命名为： PartName(小写)+名称
+ */
+
+body{
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 16px;
+    padding-top: 80px;
+    background-image:url(../images/weather.png);
+}
+
+

@@ -47,6 +47,9 @@ a{
     background-color: transparent;
     border-bottom: 3px solid #42a5f5;
 }
+#header .collapse{
+    background-image:url(../images/weather.png) ;
+}
 
 /*
  *   Footer

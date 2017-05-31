@@ -107,6 +107,10 @@ create table tuFiles(
     GT Part
 
 */
+
+
+/*
+
 create table gt_index(
 	
 	name varchar(128),
@@ -120,21 +124,19 @@ INSERT INTO gt_index (name,href) values ( "BaiDu", "http://www.baidu.com" );
 INSERT INTO gt_index (name,href) values ( "BaiD", "http://www.baidu.com" );
 INSERT INTO gt_index (name,href) values ( "Bai", "http://www.baidu.com" );
 
+*/
 
-
-create table gtBook(
-	
+create table gt_book(
 	name varchar(128),
 	href varchar(128),
 
 	primary key(name)
-
 )engine=InnoDB default charset=utf8;
 
 
-INSERT INTO gtBook (name,href) values ( "BaiDu", "http://www.baidu.com" );
-INSERT INTO gtBook (name,href) values ( "BaiD", "http://www.baidu.com" );
-INSERT INTO gtBook (name,href) values ( "Bai", "http://www.baidu.com" );
+INSERT INTO gt_book (name,href) values ( "BaiDu", "http://www.baidu.com" );
+INSERT INTO gt_book (name,href) values ( "BaiD", "http://www.baidu.com" );
+INSERT INTO gt_book (name,href) values ( "Bai", "http://www.baidu.com" );
 
 
 

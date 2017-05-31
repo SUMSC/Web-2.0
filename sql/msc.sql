@@ -115,6 +115,13 @@ create table gt_index(
 	primary key(name)
 
 )engine=InnoDB default charset=utf8;
+
+INSERT INTO gt_index (name,href) values ( "BaiDu", "http://www.baidu.com" );
+INSERT INTO gt_index (name,href) values ( "BaiD", "http://www.baidu.com" );
+INSERT INTO gt_index (name,href) values ( "Bai", "http://www.baidu.com" );
+
+
+
 create table gtBook(
 	
 	name varchar(128),

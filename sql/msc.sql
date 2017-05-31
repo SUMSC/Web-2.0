@@ -131,6 +131,13 @@ create table gtBook(
 
 )engine=InnoDB default charset=utf8;
 
+
+INSERT INTO gtBook (name,href) values ( "BaiDu", "http://www.baidu.com" );
+INSERT INTO gtBook (name,href) values ( "BaiD", "http://www.baidu.com" );
+INSERT INTO gtBook (name,href) values ( "Bai", "http://www.baidu.com" );
+
+
+
 create table gtSoftware(
 	
 	name varchar(128),

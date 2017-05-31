@@ -12,14 +12,14 @@ class GT_IndexView extends View{
     public function render($action="index"){
        
         if($action == "index" || $action == "GTIndex"){
-            $this->page($action); return ;
+            $this->showpage($action); return ;
         }
        else{
             $this->error(); return ;
         }
     }
 
-    public function page($action){
+    public function showpage($action){
         
         $pages[] = APP_PATH."application/views/Index/header.php";
         $pages[] = APP_PATH."application/views/GT_Index/".$action.".php";

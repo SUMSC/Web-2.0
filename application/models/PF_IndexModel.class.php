@@ -1,8 +1,10 @@
 <?php
 
-class TipsModel extends Model {
+class PF_IndexModel extends Model {
 
-	public function tipsSelect(){
+
+	public function faqSelect(){
+        $this->_table = "pfFaq";
         $sql = sprintf("select * from `%s` ", $this->_table);
         $sth = $this->_dbHandle->prepare($sql);
         if ( $sth->execute() )
@@ -10,7 +12,7 @@ class TipsModel extends Model {
         return 0;
 	}
 
-    public function tipsInsert( $data ){
+    public function faqInsert( $data ){
  
         $sql = sprintf( "insert into `%s` %s", $this->_table, $this->formatInsert($data) );
  
@@ -18,14 +20,14 @@ class TipsModel extends Model {
     	return $result;
     }
 
-    public function tipsDelete( $data ){
+    public function faqDelete( $data ){
  
         $sql = sprintf( "delete from `%s` where %s", $this->_table, $this->formatWhere($data) );
         $result = $this->query($sql);
     	return $result;
     }
 
-    public function tipsUpdate($set,$where){
+    public function faqUpdate($set,$where){
  
         $sql = sprintf( "update `%s`set %s where %s", $this->_table, $this->formatUpdate($set) ,$this->formatWhere($where) );
         $result = $this->query($sql);

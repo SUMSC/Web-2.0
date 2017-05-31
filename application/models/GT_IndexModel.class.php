@@ -6,7 +6,7 @@ class GT_IndexModel extends Model {
     {
     	$sql = sprintf("select * from `%s` ", $action);
     	
-    	$actiondata = $this->selectSQL($sql);
+    	return  $this->selectSQL($sql);
     }
 	
 }

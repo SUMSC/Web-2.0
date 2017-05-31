@@ -10,18 +10,19 @@ class GT_IndexView extends View{
  */
 
     public function render($action="index"){
-        if($action == "index"){
-            $this->index(); return ;
+       
+        if($action == "index" || $action == "GTIndex"){
+            $this->page($action); return ;
         }
-        else{
+       else{
             $this->error(); return ;
         }
     }
 
-    public function index(){
-
+    public function page($action){
+        
         $pages[] = APP_PATH."application/views/Index/header.php";
-        $pages[] = APP_PATH."application/views/GT_Index/book.php";
+        $pages[] = APP_PATH."application/views/GT_Index/".$action.".php";
         $pages[] = APP_PATH."application/views/Index/foot.php";
         $pages[] = APP_PATH."application/views/Index/footer.php";
 
@@ -30,7 +31,7 @@ class GT_IndexView extends View{
 
     public function error(){
 
-        echo "Error";
+        echo "NULL PAGE FOUND";
     }
 
 }

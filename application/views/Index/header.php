@@ -48,11 +48,11 @@
           <li><a href="<?php echo APP_URL?>/GT_Index/">Wu</a></li>
           <li><a href="<?php echo APP_URL?>/ACT_Index/">Gao</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="<?php echo APP_URL?>/GT_Index/book">book</a></li>
+            <li><a href="<?php echo APP_URL?>/GT_Index/book" >book</a></li>
             <li><a href="<?php echo APP_URL?>/GT_Index/software">software</a></li>
             <li><a href="<?php echo APP_URL?>/GT_Index/web">web</a></li>
             <li role="separator" class="divider"></li>
-            <li><a  href="<?php echo APP_URL?>/GT_Index/update">update</a></li>
+            <li><a  href="<?php if(isset($_SESSION['username']))  echo "GT_Index/update" ; else echo "User/login"; ?>">update</a></li>
           </ul>
         </li>
       </ul>

@@ -107,7 +107,7 @@ create table tuFiles(
     GT Part
 
 */
-create table Growth(
+create table gt_Index(
 	
 	name varchar(128),
 	href varchar(128),

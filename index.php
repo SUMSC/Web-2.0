@@ -15,6 +15,6 @@ define ('APP_PATH', __DIR__.'/');
 //   define ('APP_DEBUG_FRA', true);
 
 // APP_URL 是本地项目的主目录
-define ('APP_URL', 'http://localhost/MSC');
+define ('APP_URL', 'http://localhost//MSC');
 
 require './PHP_MVC/phpmvc.php';

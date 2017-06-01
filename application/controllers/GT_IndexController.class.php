@@ -4,25 +4,32 @@ class GT_IndexController extends Controller{
 
    
     public function index()
-    {	
+    {
+    	
         $this->_view->render("index");
     }
 
     public function book()
     {
-    	$data = (new GT_BookModel)->select();
+    	
+    	$keyword =array("type"=> __FUNCTION__);
+
+    	$data = (new GT_IndexModel)->select($keyword);
+
     	
     	//echo gettype($data);
     	
     	$this -> assign("data",$data);
 
-        // 调用渲染请用这个函数！
-        $this->render("GTIndex");
+        $this->_view->render("GTIndex");
     }
     
     public function web()
     {
-    	$data = (new GT_IndexModel)->select("gtWeb");
+    	$keyword =array("type"=> __FUNCTION__);
+
+    	$data = (new GT_IndexModel)->select($keyword);
+
     	
     	//echo gettype($data);
     	
@@ -32,7 +39,11 @@ class GT_IndexController extends Controller{
     }
     public function software()
     {
-    	$data = (new GT_IndexModel)->select("gtSoftware");
+
+    	$keyword =array("type"=> __FUNCTION__);
+
+    	$data = (new GT_IndexModel)->select($keyword);
+
     	
     	//echo gettype($data);
     	
@@ -40,10 +51,20 @@ class GT_IndexController extends Controller{
 
         $this->_view->render("GTIndex");
 
-        // book.php 调用方式 $vars["data"];
-        $this->assign("data", $data);
+    }
+    public function update()
+    {
+    	
+    	$keyword =array("type"=> __FUNCTION__);
 
-        $this->render("index");
+    	$data = (new GT_IndexModel)->select($keyword);
+
+    	
+    	//echo gettype($data);
+    	
+    	$this -> assign("data",$data);
+
+        $this->_view->render("GTIndex");
 
     }
 }

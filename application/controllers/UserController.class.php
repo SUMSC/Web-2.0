@@ -5,15 +5,26 @@ class UserController extends Controller{
 
     public function login()
     {
+    	?>
+
+    	<form method="post">
+        <input name="login" value="1" type="hidden" />
+	<label>username:<input type="text" name="username"></label>
+	<br/><br/>
+	<label>password:<input type="password" name="password"></label>
+	<br/><br/>
+	<button type="submit" name="submit">login</button>
+	</form>
+      
+      <?php 
+      
         $data = array();
 
-        if($_SERVER["REQUEST_METHOD"] == "POST")
+        if(isset($_POST['login']))
         {
             $data['username'] = $_POST['username'];
             $data['password'] = $_POST['password'];
         }
-        else {
-            exit("The service has not got message from the http url by the method of POST.");
         }
         
         $tmp_data = array();
@@ -23,7 +34,7 @@ class UserController extends Controller{
 
         if( $result == array() ){
 
-            $this->error("用户不存在，请先注册");
+            $this->error("用户不存在");
 
         }else {
             

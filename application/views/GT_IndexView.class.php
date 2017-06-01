@@ -28,7 +28,7 @@ class GT_IndexView extends View{
         * 所以这里不需要传参
         */  
         $pages[] = APP_PATH."application/views/Index/header.php";
-        $pages[] = APP_PATH."application/views/GT_Index/book.php";
+        $pages[] = APP_PATH."application/views/GT_Index/".$action.".php";
         $pages[] = APP_PATH."application/views/Index/foot.php";
         $pages[] = APP_PATH."application/views/Index/footer.php";
 

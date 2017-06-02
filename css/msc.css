@@ -86,3 +86,81 @@ a{
     background: #FFF;
 }
 
+/*
+ *   TU
+ */
+
+.t_shadow{
+  text-align:center;
+  display:none;
+  background:rgba(50,50,50,0.5);
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  left:0px;
+  z-index:5;
+}
+
+#t_alert{
+  position:fixed;
+  display:none;
+  width:340px;
+  height:170px;
+  top:50%;
+  left:50%;
+  margin:-86px -170px;
+  box-shadow:0px 0px 8px #aaa;
+  border-radius:5px;
+  background:#fafafa;
+  z-index:10;
+  overflow:hidden;
+}
+
+.t_ipt,.t_btn{
+  border:none;
+  border-radius:3px;
+  background:#ddd;
+}
+
+.t_ipt{
+  padding-left:20px;
+  width:220px;
+  height:40px;
+}
+
+.t_btn{
+  width:60px;
+  height:36px;
+  position:relative;
+  float:right;
+  margin:auto 30px 20px -18px;
+}
+
+.t_btn:hover{
+  background:#2520ff;
+  color:#fff;
+}
+
+#t_alert img{
+  position:relative;
+  margin:auto 10px auto -40px;
+  top:45px;
+}
+
+#t_alert span{
+  position:relative;
+  color:#2a2a2a;
+  top:34px;
+  font-size:14px;
+  white-space:nowrap;
+}
+
+#t_alert input,#t_alert button{
+  top:65px;
+  right:0px;
+}
+
+/*
+ *    TU --end
+ */

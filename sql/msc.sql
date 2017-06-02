@@ -1,4 +1,4 @@
-drop database if exists `MSC`;
+﻿drop database if exists `MSC`;
 
 create database `MSC` default character set utf8 COLLATE utf8_general_ci ;
 
@@ -107,24 +107,11 @@ create table tuFiles(
     GT Part
 
 */
-create table Growth(
-	
-	name varchar(128),
-	href varchar(128),
 
-	primary key(name)
 
-)engine=InnoDB default charset=utf8;
-create table gtBook(
-	
-	name varchar(128),
-	href varchar(128),
+/*
 
-	primary key(name)
-
-)engine=InnoDB default charset=utf8;
-
-create table gtSoftware(
+create table gt_index(
 	
 	name varchar(128),
 	href varchar(128),
@@ -133,11 +120,28 @@ create table gtSoftware(
 
 )engine=InnoDB default charset=utf8;
 
-create table gtWeb(
-	
+INSERT INTO gt_index (name,href) values ( "BaiDu", "http://www.baidu.com" );
+INSERT INTO gt_index (name,href) values ( "BaiD", "http://www.baidu.com" );
+INSERT INTO gt_index (name,href) values ( "Bai", "http://www.baidu.com" );
+
+*/
+
+create table gt_index(
+	type varchar(128),
 	name varchar(128),
 	href varchar(128),
 
 	primary key(name)
 )engine=InnoDB default charset=utf8;
+
+
+INSERT INTO gt_index (type,name,href) values ("software", "BaiDu", "http://www.baidu.com" );
+INSERT INTO gt_index (type,name,href) values ("web" ,"BaiD", "http://www.baidu.com" );
+INSERT INTO gt_index (type,name,href) values ( "book","Bai", "http://www.baidu.com" );
+INSERT INTO gt_index (type,name,href) values ("software", "BDu", "http://www.baidu.com" );
+INSERT INTO gt_index (type,name,href) values ("web" ,"BaDu", "http://www.baidu.com" );
+INSERT INTO gt_index (type,name,href) values ( "book","B", "http://www.baidu.com" );
+
+
+
 

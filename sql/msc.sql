@@ -12,7 +12,7 @@ use `MSC`;
 create table pfRepairmen(
 
 	rid int unsigned auto_increment,
-	name varchar(32),
+	name_ varchar(32),
 	contact varchar(64),
 	gender varchar(16),
 	free int default '0',

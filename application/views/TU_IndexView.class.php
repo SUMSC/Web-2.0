@@ -18,14 +18,14 @@ class TU_IndexView extends View{
     }
     
     public function index(){
-        echo "this is index";
+        require(APP_PATH."application/views/TU_Index/index.php");
     }
     
     public function test(){
-		$pages[] = APP_PATH."application/views/TU_Index/test.php";
-		$pages[] = APP_PATH."application/views/TU_Index/link.php";
+	$pages[] = APP_PATH."application/views/TU_Index/test.php";
+	$pages[] = APP_PATH."application/views/TU_Index/link.php";
         foreach($pages as $page){
-			require($page);
-		}
+		require($page);
+	}
     }
 }

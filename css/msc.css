@@ -161,6 +161,126 @@ a{
   right:0px;
 }
 
+@-webkit-keyframes t_glow {
+    0% {
+        border-color: #cccccc;
+        box-shadow: 0 0 5px rgba(102,153,255,.2), inset 0 0 5px rgba(102,153,255,.1);
+    }    
+    100% {
+        border-color: #66FFFF;
+        box-shadow: 0 0 20px rgba(102,153,255,.6), inset 0 0 10px rgba(102,153,255,.4);
+    }
+}
+
+@-moz-keyframes t_glow {
+    0% {
+        border-color: #cccccc;
+        box-shadow: 0 0 5px rgba(102,153,255,.2), inset 0 0 5px rgba(102,153,255,.1);
+    }    
+    100% {
+        border-color: #66FFFF;
+        box-shadow: 0 0 20px rgba(102,153,255,.6), inset 0 0 10px rgba(102,153,255,.4);
+    }
+}
+
+@-o-keyframes t_glow {
+    0% {
+        border-color: #cccccc;
+        box-shadow: 0 0 5px rgba(102,153,255,.2), inset 0 0 5px rgba(102,153,255,.1);
+    }    
+    100% {
+        border-color: #66FFFF;
+        box-shadow: 0 0 20px rgba(102,153,255,.6), inset 0 0 10px rgba(102,153,255,.4);
+    }
+}
+
+@-ms-keyframes t_glow {
+    0% {
+        border-color: #cccccc;
+        box-shadow: 0 0 5px rgba(102,153,255,.2), inset 0 0 5px rgba(102,153,255,.1);
+    }    
+    100% {
+        border-color: #66FFFF;
+        box-shadow: 0 0 20px rgba(102,153,255,.6), inset 0 0 10px rgba(102,153,255,.4);
+    }
+}
+
+@keyframes t_glow {
+    0% {
+        border-color: #cccccc;
+        box-shadow: 0 0 5px rgba(102,153,255,.2), inset 0 0 5px rgba(102,153,255,.1);
+    }    
+    100% {
+        border-color: #66FFFF;
+        box-shadow: 0 0 20px rgba(102,153,255,.6), inset 0 0 10px rgba(102,153,255,.4);
+    }
+}
+
+.t_btn:focus,.t_ipt:focus,.t_ipt:hover,.t_btn:hover{
+  outline:none;
+  -webkit-animation: t_glow 800ms ease-out infinite alternate;
+  -moz-animation: t_glow 800ms ease-out infinite alternate;
+  -o-animation: t_glow 800ms ease-out infinite alternate;
+  -ms-animation: t_glow 800ms ease-out infinite alternate;
+  animation: t_glow 800ms ease-out infinite alternate;
+  cursor:pointer;
+}
+
+.t_sbtn{
+  width:16px;
+  position:absolute;
+  height:16px;
+  right:15px;
+  top:15px;
+  opacity:0.2;
+  transition-duration:0.3s;
+}
+
+.t_sbtn:hover{
+  opacity:0.8;
+  cursor:pointer;
+}
+
+.t_upform,.t_upform_static{
+  position:absolute;
+  border:1px solid #ccc;
+  border-radius:9px;
+  width:300px;
+  left:50%;
+  top:50%;
+  margin:-101px -150px;
+  box-shadow:2px 1px 9px #999;
+  background:rgba(255,255,255,1);
+  overflow:hidden;
+  transition-duration:0.3s;
+  z-index:6
+}
+
+.t_upform_static{
+  overflow:hidden;
+  transition-duration:0s;
+  z-index:0;
+}
+
+.t_upform p,.t_upform_static p{
+  margin:20px auto;
+  clear:both;
+}
+
+.t_uploadtips{
+  color:#afafaf;
+  font-size:12px;
+  position:relative;
+  width:236px;
+  height:18px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-align:left;
+  left:32px;
+  top:-10px;
+  float:left;
+}
+
 /*
  *    TU --end
  */

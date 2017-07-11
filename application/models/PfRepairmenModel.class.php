@@ -1,48 +1,51 @@
-<?php 
-	class PfConsultModel extends Model{
+<?php
 
-    public function descriptionSelect($cid){
-        $sql = sprintf("select description from %s where cid = %d ", $this->_table , $cid);
+class PfRepairmenModel extends Model {
+
+    public function qIDSelect($id){
+        $sql = sprintf("select qq from %s where rid = %d", $this->_table ,$id );
         $sth = $this->_dbHandle->prepare($sql);
         if ( $sth->execute() )
             return $sth->fetchAll();
         return 0;
-    }
-	public function consultSelect(){
+    }  
+
+    public function nameSelect($id){
+        $sql = sprintf("select name from %s where rid = %d", $this->_table ,$id );
+        $sth = $this->_dbHandle->prepare($sql);
+        if ( $sth->execute() )
+            return $sth->fetchAll();
+        return 0;
+    }  
+
+	public function PfRepairmenSelect(){
         $sql = sprintf("select * from `%s` ", $this->_table);
         $sth = $this->_dbHandle->prepare($sql);
         if ( $sth->execute() )
             return $sth->fetchAll();
         return 0;
-	}
-    
-    public function consultSelectMax(){
-        $sql = sprintf("select max(cid) as cid from `%s` ", $this->_table);
-        $sth = $this->_dbHandle->prepare($sql);
-        if ( $sth->execute() )
-            return $sth->fetchAll();
-        return 0;
-    }
+	}  
 
-    public function consultInsert( $data ){
+    public function PfRepairmenInsert( $data ){
  
         $sql = sprintf( "insert into `%s` %s", $this->_table, $this->formatInsert($data) );
  
-        $result = $this->querySQL($sql);
+        $result = $this->query($sql);
     	return $result;
     }
 
-    public function consultDelete( $data ){
+    public function PfRepairmenDelete( $data ){
  
         $sql = sprintf( "delete from `%s` where %s", $this->_table, $this->formatWhere($data) );
-        $result = $this->querySQL($sql);
+        $result = $this->query($sql);
     	return $result;
     }
 
-    public function consultUpdate($set,$where){
+    public function PfRepairmenUpdate($set,$where){
  
         $sql = sprintf( "update `%s`set %s where %s", $this->_table, $this->formatUpdate($set) ,$this->formatWhere($where) );
-        $result = $this->querySQL($sql);
+        $result = $this->query($sql);
         return $result;
-    }					
+    }
+
 }

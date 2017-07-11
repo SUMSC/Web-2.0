@@ -12,11 +12,12 @@ use `MSC`;
 create table pfRepairmen(
 
 	rid int unsigned auto_increment,
-	name_ varchar(32),
-	contact varchar(64),
+	name varchar(32),
+	qq varchar(64),
+	introduction varchar(512),
 	gender varchar(16),
-	free int default '0',
-
+	headlink varchar(1024) default '/images/defaultHead.jpg',
+	free varchar(16) default '0',
 	primary key(rid)
     
 )engine=InnoDB default charset=utf8;
@@ -24,8 +25,8 @@ create table pfRepairmen(
 create table pfFaq(
 
 	qid int unsigned auto_increment,
-	ask varchar(1024),
-	question varchar(2048),
+	question varchar(1024),
+	answer varchar(2048),
 	primary key(qid)
 	
 )engine=InnoDB auto_increment=1 default charset=utf8;

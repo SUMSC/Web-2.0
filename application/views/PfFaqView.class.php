@@ -25,8 +25,8 @@
 			echo "<h2 align='center'>在报修之前，建议您先浏览以下常见问题：</h2>";
 	        foreach($faqs as $faq){
 				echo "<hr>";
-				echo "<p>A:".$faq['ask']."</p>";
 				echo "<p>Q:".$faq['question']."</p>";
+				echo "<p>A:".$faq['answer']."</p>";
 			}
         	while (array_shift($pages)) {}
         	$pages[] = APP_PATH."application/views/PF_Index/form.php";

@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="<?php echo APP_URL ?>/css/google-code-prettify/prettify.css" />
 
         <link rel="stylesheet" href="<?php echo APP_URL ?>/css/msc.css">
-    <!--    <script src="<?php echo APP_URL ?>/js/jquery-3.2.1.min.js"></script> -->
+        <script src="<?php echo APP_URL ?>/js/jquery-3.2.1.min.js"></script>
         <script src="<?php echo APP_URL ?>/js/bootstrap.min.js"></script>
 
     </head>

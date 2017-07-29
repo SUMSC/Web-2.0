@@ -28,6 +28,6 @@
             $pages[] = APP_PATH."application/views/Index/header.php";
             $pages[] = APP_PATH."application/views/PF_Repairmen/backend.php";
             foreach($pages as $page){ $this->page($page);}
-
         }
+
 	}

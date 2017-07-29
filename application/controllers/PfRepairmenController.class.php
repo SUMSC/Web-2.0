@@ -12,7 +12,6 @@ class PfRepairmenController extends Controller{
     }
 
     function mail($params){
-    	
     	session_start();
 
     	$idArray = $this->splitParam($params[0]);
@@ -23,11 +22,8 @@ class PfRepairmenController extends Controller{
     	$mailRecipient = $mailrecipient[0]['name'];
 		$mailAddress=$qid."@qq.com";
 		$cid = $_SESSION['cid'];
-
-
 		$content = (new PfconsultModel)->descriptionSelect($cid);
 		$content=$content[0]['description'];
-
 		require '/PHPMailer/PHPMailerAutoload.php';
 		$mail = new PHPMailer;
 
@@ -59,8 +55,51 @@ class PfRepairmenController extends Controller{
 		}
 
     }
+
     function backend(){
         $this->render("backend");
     }
 
+	function addNew(){
+		$data = array('qq' => $_POST['qq'], 'name' => $_POST['name'], 'introduction' =>$_POST['introduction'],'free' => 1 , 'gender' =>$_POST['gender'] );
+		(new PfRepairmenModel) -> PfRepairmenInsert($data);
+    	header("Location:".APP_URL."/PfRepairmen/backend");
+	}
+
+	function test(){
+		$vars = $_GET;
+		var_dump($_GET);
+
+
+	}
+
+	function change(){
+		/*
+		$data = array('qq' => $_POST['qq'], 'name' => $_POST['name'], 'introduction' =>$_POST['introduction'],'free' => 1 , 'gender' =>$_POST['gender'] );
+		(new PfRepairmenModel) -> PfRepairmenInsert($data);
+    	header("Location:".APP_URL."/PfRepairmen/backend");
+    	*/
+    	var_dump($_POST);
+    	echo "<hr>";
+
+    	$rid = explode('/', $_GET["url"]);
+    	$rid = $rid[2];
+    	$params = array();
+    	$where = array();
+    	$where["rid"] = $rid;
+    	foreach ($_POST as $key => $value) {
+    		$params[$key] = $value;
+    	}
+    	array_pop($params);
+    	(new PfRepairmenModel) ->PfRepairmenUpdate($params,$where);
+    	$this->jumping();
+	}
+
+
+    function jumping(){
+    	echo "Something changing...Please wait.";
+    	header("Location:".APP_URL."/PfRepairmen/backend");
+    }
+
+    
 }

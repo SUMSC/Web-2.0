@@ -30,21 +30,21 @@ class PfRepairmenModel extends Model {
  
         $sql = sprintf( "insert into `%s` %s", $this->_table, $this->formatInsert($data) );
  
-        $result = $this->query($sql);
+        $result = $this->querySQL($sql);
     	return $result;
     }
 
     public function PfRepairmenDelete( $data ){
  
         $sql = sprintf( "delete from `%s` where %s", $this->_table, $this->formatWhere($data) );
-        $result = $this->query($sql);
+        $result = $this->querySQL($sql);
     	return $result;
     }
 
     public function PfRepairmenUpdate($set,$where){
  
         $sql = sprintf( "update `%s`set %s where %s", $this->_table, $this->formatUpdate($set) ,$this->formatWhere($where) );
-        $result = $this->query($sql);
+        $result = $this->querySQL($sql);
         return $result;
     }
 

@@ -1,22 +1,211 @@
-<h1>当前小伙子</h1>
-<div class="row">
-	<div class="container">
-        <?php
-            $repairmen = (new PfRepairmenModel)->PfRepairmenSelect();
+<?php  ob_start(); ?>
+<script type="text/javascript">
 
-            foreach($repairmen as $repairman){
-                    echo "<div class='col-md-4'><p>rid:".$repairman['rid']."</p>";
-                    echo "<p>name:".$repairman['name']."</p>";
-                    echo "<p>contact:".$repairman['contact']."</p>";
-                    echo "<p>gender:".$repairman['gender']."</p>";
-                    echo "<p>freestat:".$repairman['free']."</p>";
-?>
-</div>      
-<?php
+function Trim(str,is_global='g')
+{
+    str = String(str);
+    var result;
+    result = str.replace(/(^\s+)|(\s+$)/g,"");
+    if(is_global.toLowerCase()=="g")
+    {
+        result = result.replace(/\s/g,"");
+     }
+    return result;
+}
+
+function x(form)
+{
+    var name = Trim(document.getElementById("name").value,"g");
+    var qq = Trim(document.getElementById("qq").value,"g");
+    var gender = Trim(document.getElementById("gender").value,"g");
+    var introduction = Trim(document.getElementById("introduction").value,"g");    
+    if(name == "")
+    {
+         alert("这四项均不能为空哦！");
+         return false;
     }
-?>
+    if(qq == "")
+    {
+         alert("这四项均不能为空哦！");
+         return false;
+    }
+    if(gender == "")
+    {
+         alert("这四项均不能为空哦！");
+         return false;
+    }
+    if(introduction == "")
+    {
+         alert("这四项均不能为空哦！");
+         return false;
+    }
+    return true;
+}
+</script>
+
+
+<table class="table table-bordered">
+<caption>repairmen </caption>
+    <thead>
+        <tr>
+            <th class="text-danger">ACTION</th>
+            <th>name</th>
+            <th>qq</th>
+            <th>gender</th>
+            <th>head</th>
+            <th>free</th>
+            <th>Introduction</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+            $repairmen = (new PfRepairmenModel)->PfRepairmenSelect();
+            foreach($repairmen as $repairman){
+    ?>
+        <tr id=<?php echo $repairman['rid']; ?>>
+            <td>
+                <form action='' method='POST'>
+                    <button class="btn btn-default" type='submit' name='delete' value=<?php echo $repairman['rid'] ?>>删除此条</button>
+                </form>
+
+                <button class="btn btn-primary" data-toggle="modal" data-target=<?php echo "#Modal".$repairman['rid']?>>
+                    Change
+                </button>
+
+                <div class="modal fade" id=<?php echo "Modal".$repairman['rid']?> tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    <?php echo "Code#".$repairman['rid']."Changing"?>
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <form method="POST" action=<?php echo APP_URL."/PfRepairmen/change/".$repairman['rid']?> class="form-horizontal" role="form" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="name" class="col-sm-4 control-label">Name</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" name="name" id=<?php echo "name".$repairman['rid']?> placeholder="name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="qq" class="col-sm-4 control-label">qq</label>
+                                        <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="qq" id=<?php echo "qq".$repairman['rid']?> placeholder="qq">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender tag" class="col-sm-4 control-label">gender tag</label>
+                                        <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="gender" id=<?php echo "gender".$repairman['rid']?> placeholder="gender tag">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="introduction" class="col-sm-4 control-label">introduction</label>
+                                        <div class="col-sm-8">
+                                        <input type="text" class="form-control" name="introduction" id=<?php echo "introduction".$repairman['rid']?> placeholder="introduction">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="free" class="col-sm-4 control-label">是否显示在列表中</label>
+                                        <div class="radio-inline">
+                                            <label>
+                                                <input type="radio" name="free" id=<?php echo "free".$repairman['rid']?> value="1" checked> 显示
+                                            </label>
+                                        </div>
+                                        <div class="radio-inline">
+                                            <label>
+                                                <input type="radio" name="free" id=<?php echo "notfree".$repairman['rid']?> value="0">不显示
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                       <input type="submit" name="submit" value="提交"> 
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <?php echo $repairman['name']; ?>
+            </td>
+            <td>
+                <?php echo $repairman['qq']; ?>
+            </td>
+            <td>
+                <?php echo $repairman['gender']; ?>
+            </td>
+            <td>
+                <img  height=150px src=<?php echo APP_URL.$repairman['headlink'];?> class='img-responsive center-block' />
+            </td>
+            <td>
+                <?php echo $repairman['free']; ?>
+            </td>
+            <td>
+                <?php echo $repairman['introduction']; ?>
+            </td>
+        </tr>
+    <?php
+     }
+     ?>
+     </tbody>
+</table>
+
+<h1>ADD NEW</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <form method="POST" onsubmit="return x();" action="<?php echo APP_URL."/PfRepairmen/addNew"?>"  enctype="multipart/form-data"> 
+            <div class="col-md-5">
+                <div class="form-group">
+                    <input class="form-control" name="name" id="name" placeholder="称呼" type="text">
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <input class="form-control" name="qq" id="qq" placeholder="qq" type="text">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <input class="form-control" name="gender" id="gender" placeholder="male" type="text">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea name="introduction" id="introduction" class="form-control"  cols="30" rows="4" placeholder="introduction"></textarea>
+                </div>
+            </div>
+
+            <div align="center" class="col-md-12">
+                <div class="form-group">
+                   <input type="submit" name="submit" value="提交"> 
+                </div>
+            </div>
+        </form>
     </div>
 </div>
-<button type="button" class="btn btn-danger">Delete</button>
-<button type="button" class="btn ">Change</button>
-<button type="button" class="btn">Update New</button>
+
+
+
+
+<?php
+    if(isset($_POST['delete'])){
+        $user  = $_POST['delete'];
+        $tempArray  = array('rid' => $user);
+       (new PfRepairmenModel)->PfRepairmenDelete($tempArray);
+       header("Location:".APP_URL."/PfRepairmen/jumping");
+    }
+    if(isset($_POST['change'])){
+        $user  = $_POST['change'];
+        $tempArray  = array('rid' => $user);
+       header("Location:".APP_URL."/PfRepairmen/jumping?");
+    }
+?>

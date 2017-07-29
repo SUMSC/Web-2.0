@@ -15,8 +15,9 @@
         <link rel="stylesheet" href="<?php echo APP_URL ?>/css/google-code-prettify/prettify.css" />
 
         <link rel="stylesheet" href="<?php echo APP_URL ?>/css/msc.css">
+    <!--    <script src="<?php echo APP_URL ?>/js/jquery-3.2.1.min.js"></script> -->
+        <script src="<?php echo APP_URL ?>/js/bootstrap.min.js"></script>
 
-        <script src="<?php echo APP_URL ?>/js/jquery-3.2.1.min.js"></script>
     </head>
 
     <body onload="prettyPrint()">
@@ -38,7 +39,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="<?php echo APP_URL?>/"> Link <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="<?php echo APP_URL?>/">Link <span class="sr-only">(current)</span></a></li>
         <li><a href="#"> Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Unit <span class="caret"></span></a>

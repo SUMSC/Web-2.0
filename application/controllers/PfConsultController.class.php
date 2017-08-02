@@ -18,7 +18,7 @@
 				$cid = $thisConsult->consultSelectMax();
 				$cid = $cid[0]['cid'];
 				$_SESSION['cid'] = $cid;
-				header("Location:".APP_URL."/PfRepairmen/index?id=$cid"); 
+				header("Location:".APP_URL."/PfRepairmen/index"); 
 			}
 		}
 	}

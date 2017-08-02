@@ -21,12 +21,16 @@
             $pages[] = APP_PATH."application/views/Index/header.php";
             $pages[] = APP_PATH."application/views/PF_Repairmen/title.php";
             $pages[] = APP_PATH."application/views/PF_Repairmen/repairmen.php";
+            $pages[] = APP_PATH."application/views/Index/foot.php";
+            $pages[] = APP_PATH."application/views/Index/footer.php";
             foreach($pages as $page){ $this->page($page);}
 	    }
 
         public function backend(){
             $pages[] = APP_PATH."application/views/Index/header.php";
             $pages[] = APP_PATH."application/views/PF_Repairmen/backend.php";
+            $pages[] = APP_PATH."application/views/Index/foot.php";
+            $pages[] = APP_PATH."application/views/Index/footer.php";
             foreach($pages as $page){ $this->page($page);}
         }
 

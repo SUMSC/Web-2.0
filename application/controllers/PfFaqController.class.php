@@ -8,7 +8,16 @@ class PfFaqController extends Controller{
     	$this->assign('title', '首页');
         $this->assign('content', 'php MVC');
         $this->render("index");
-       // $this->render("submit");
         }
+
+    function addFaq(){
+    	$this->render("addFaq");
+    }
+
+    function newFaq(){
+		$data = array('question' => $_POST['question'], 'answer' => $_POST['answer']);
+		(new PfFaqModel) -> faqInsert($data);
+    	header("Location:".APP_URL."/PfFaq/addFaq");
+    }
 
 }

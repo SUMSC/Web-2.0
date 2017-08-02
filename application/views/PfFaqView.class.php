@@ -7,9 +7,9 @@
     	    {
     	        $this->index(); return ;
     	    }
-    	    else if($action == "submit")
+    	    else if($action == "addFaq")
     	    {	
-    	     	$this->submit(); return ;
+    	     	$this->addFaq(); return ;
     	    }
     	    else
     	    {
@@ -36,4 +36,11 @@
 
 	    }
 
+        public function addFaq(){
+        $pages[] = APP_PATH."application/views/Index/header.php";
+        $pages[] = APP_PATH."application/views/PF_Index/addfaq.php";
+        $pages[] = APP_PATH."application/views/Index/foot.php";
+        $pages[] = APP_PATH."application/views/Index/footer.php";
+        foreach($pages as $page){ $this->page($page);}
+        }
 	}

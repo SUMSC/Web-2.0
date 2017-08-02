@@ -39,14 +39,25 @@ function x(form)
          alert("这四项均不能为空哦！");
          return false;
     }
+
+
     return true;
 }
 </script>
 
-
-<table class="table table-bordered">
+<table class="table table-striped table-responsive">
 <caption>repairmen </caption>
     <thead>
+        <colgroup>
+            <col width="10%"></col>
+            <col></col>
+            <col></col>
+            <col></col>
+            <col></col>
+            <col></col>
+            <col width="30%"></col>                
+        </colgroup>
+
         <tr>
             <th class="text-danger">ACTION</th>
             <th>name</th>
@@ -54,7 +65,7 @@ function x(form)
             <th>gender</th>
             <th>head</th>
             <th>free</th>
-            <th>Introduction</th>
+            <th>Introductions</th>
         </tr>
     </thead>
     <tbody>
@@ -65,12 +76,29 @@ function x(form)
         <tr id=<?php echo $repairman['rid']; ?>>
             <td>
                 <form action='' method='POST'>
-                    <button class="btn btn-default" type='submit' name='delete' value=<?php echo $repairman['rid'] ?>>删除此条</button>
+                    <button class="btn btn-warning" type='submit' name='delete' value=<?php echo $repairman['rid'] ?>>删除此条</button>
                 </form>
 
                 <button class="btn btn-primary" data-toggle="modal" data-target=<?php echo "#Modal".$repairman['rid']?>>
-                    Change
+                    修改条目
                 </button>
+
+                <button class="btn btn-primary" data-toggle="modal" data-target=<?php echo "#HModal".$repairman['rid']?>>
+                    上传新头像
+                </button>
+
+                <div class="modal fade" id=<?php echo "HModal".$repairman['rid']?> tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <form method="POST" action=<?php echo APP_URL."/PfRepairmen/head/".$repairman['rid']?> class="form-horizontal" role="form" enctype="multipart/form-data">
+                                    <input type="file" name="file" id="file">                                     
+                                    <input type="submit" name="submit" value="提交"> 
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="modal fade" id=<?php echo "Modal".$repairman['rid']?> tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -90,25 +118,25 @@ function x(form)
                                     <div class="form-group">
                                         <label for="name" class="col-sm-4 control-label">Name</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="name" id=<?php echo "name".$repairman['rid']?> placeholder="name">
+                                            <input type="text" class="form-control" name="name" value=<?php echo $repairman['name']?> id=<?php echo "name".$repairman['rid']?> placeholder="name">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="qq" class="col-sm-4 control-label">qq</label>
                                         <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="qq" id=<?php echo "qq".$repairman['rid']?> placeholder="qq">
+                                        <input type="text" class="form-control" name="qq" value=<?php echo $repairman['qq']?> id=<?php echo "qq".$repairman['rid']?> placeholder="qq">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="gender tag" class="col-sm-4 control-label">gender tag</label>
                                         <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="gender" id=<?php echo "gender".$repairman['rid']?> placeholder="gender tag">
+                                        <input type="text" class="form-control" name="gender" value=<?php echo $repairman['gender']?> id=<?php echo "gender".$repairman['rid']?> placeholder="gender tag">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="introduction" class="col-sm-4 control-label">introduction</label>
                                         <div class="col-sm-8">
-                                        <input type="text" class="form-control" name="introduction" id=<?php echo "introduction".$repairman['rid']?> placeholder="introduction">
+                                        <textarea class="form-control" name="introduction" id=<?php echo "introduction".$repairman['rid']?> placeholder="introduction" cols="30" rows="4"><?php echo $repairman['introduction']?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -132,6 +160,10 @@ function x(form)
                         </div>
                     </div>
                 </div>
+
+
+
+
             </td>
             <td>
                 <?php echo $repairman['name']; ?>
@@ -143,7 +175,7 @@ function x(form)
                 <?php echo $repairman['gender']; ?>
             </td>
             <td>
-                <img  height=150px src=<?php echo APP_URL.$repairman['headlink'];?> class='img-responsive center-block' />
+                <img width=150px height=150px src=<?php echo APP_URL.$repairman['headlink'];?> class='img-responsive center-block' />
             </td>
             <td>
                 <?php echo $repairman['free']; ?>
@@ -159,7 +191,7 @@ function x(form)
 </table>
 
 <h1>ADD NEW</h1>
-
+    
 <div class="container-fluid">
     <div class="row">
         <form method="POST" onsubmit="return x();" action="<?php echo APP_URL."/PfRepairmen/addNew"?>"  enctype="multipart/form-data"> 
@@ -191,7 +223,7 @@ function x(form)
             </div>
         </form>
     </div>
-</div>
+</div>  
 
 
 
@@ -209,3 +241,6 @@ function x(form)
        header("Location:".APP_URL."/PfRepairmen/jumping?");
     }
 ?>
+
+
+

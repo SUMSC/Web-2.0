@@ -11,13 +11,12 @@
                         <div class='col-md-4 column'>
                             <div class='row'>
                                 <div class='thumbnail'>
-                                    <div class="col-md-12"><img class='img-responsive center-block' height=150px src=<?php echo APP_URL.$head;?> /></div>
+                                    <div class="col-md-12"><img class='img-responsive center-block' width=150px src=<?php echo APP_URL.$head;?> /></div>
                                     <div class="caption">
                                             <?php
                                             echo "<h3 class='text-center'><strong>".$repairman['name']."</strong></h3>";
                                             echo "<p class='text-muted'>".$repairman['gender']."</p>";
                                             echo "<p class='text-muted'>".$repairman['introduction']."</p>";
-                                            echo "<p>freestat:".$repairman['free']."</p>"; 
                                             $rid = $repairman["rid"];
                                             ?>
                                             <a align='right' class='btn btn-primary' href='<?php echo APP_URL."/PfRepairmen/mail/id=$rid";?>'>Click Here Contact</a>

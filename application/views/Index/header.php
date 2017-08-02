@@ -16,7 +16,11 @@
 
         <link rel="stylesheet" href="<?php echo APP_URL ?>/css/msc.css">
         <script src="<?php echo APP_URL ?>/js/jquery-3.2.1.min.js"></script>
+<<<<<<< HEAD
 <!--        <script src="<?php echo APP_URL ?>/js/bootstrap.min.js"></script>-->
+=======
+        <script src="<?php echo APP_URL ?>/js/bootstrap.min.js"></script>
+>>>>>>> 81faec3791d5cc72d0f99f59b34a0e711924622a
 
     </head>
 

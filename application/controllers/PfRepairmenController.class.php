@@ -142,7 +142,7 @@ class PfRepairmenController extends Controller{
 				    	$where["rid"] = $rid;
 				    	$params['headlink'] = $headlink;
 				    	(new PfRepairmenModel) ->PfRepairmenUpdate($params,$where);
-						//$this->jumping();
+						$this->jumping();
 					}
 				}
 			}

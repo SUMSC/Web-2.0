@@ -9,7 +9,7 @@ use `MSC`;
     PF Part
 */
 
-create table pfRepairmen(
+create table pfrepairmen(
 
 	rid int unsigned auto_increment,
 	name varchar(32),
@@ -22,7 +22,7 @@ create table pfRepairmen(
     
 )engine=InnoDB default charset=utf8;
 
-create table pfFaq(
+create table pffaq(
 
 	qid int unsigned auto_increment,
 	question varchar(1024),
@@ -32,7 +32,7 @@ create table pfFaq(
 )engine=InnoDB auto_increment=1 default charset=utf8;
 
 
-create table pfConsult(
+create table pfconsult(
 
 	cid int unsigned auto_increment,
 	rid int NOT NULL, 
@@ -142,7 +142,6 @@ INSERT INTO gt_index (type,name,href) values ( "book","Bai", "http://www.baidu.c
 INSERT INTO gt_index (type,name,href) values ("software", "BDu", "http://www.baidu.com" );
 INSERT INTO gt_index (type,name,href) values ("web" ,"BaDu", "http://www.baidu.com" );
 INSERT INTO gt_index (type,name,href) values ( "book","B", "http://www.baidu.com" );
-
 
 
 

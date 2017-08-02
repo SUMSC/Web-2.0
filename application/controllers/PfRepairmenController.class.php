@@ -22,7 +22,7 @@ class PfRepairmenController extends Controller{
     	$mailRecipient = $mailrecipient[0]['name'];
 		$mailAddress=$qid."@qq.com";
 		$cid = $_SESSION['cid'];
-		$content = (new PfconsultModel)->descriptionSelect($cid);
+		$content = (new PfConsultModel)->descriptionSelect($cid);
 		$content=$content[0]['description'];
 
     	$set = array();
@@ -31,7 +31,7 @@ class PfRepairmenController extends Controller{
 		$set['rid'] = $rid;
 		(new PfConsultModel) ->consultUpdate($set,$where);
 
-		require '/PHPMailer/PHPMailerAutoload.php';
+		require './PHPMailer/PHPMailerAutoload.php';
 		$mail = new PHPMailer;
 
 		$mail->isSMTP();                                      

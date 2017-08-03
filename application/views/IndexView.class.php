@@ -20,7 +20,8 @@ class IndexView extends View{
 
     public function index(){
         $pages[] = APP_PATH."application/views/Index/header.php";
-        $pages[] = APP_PATH."application/views/Index/index.php";
+        //$pages[] = APP_PATH."application/views/Index/index.php";
+        $pages[] = APP_PATH."application/views/Index/content.php";
         $pages[] = APP_PATH."application/views/Index/foot.php";
         $pages[] = APP_PATH."application/views/Index/footer.php";
 

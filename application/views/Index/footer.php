@@ -6,7 +6,9 @@
 <script src="<?php echo APP_URL ?>/js/vue.js"></script>
 <script src="<?php echo APP_URL ?>/js/jquery.knob.min.js"></script>
 <script src="<?php echo APP_URL ?>/js/jquery.pagination.js"></script>
-<script src="<?php echo APP_URL ?>/js/tagcloud.jquery.js"></script>
+
+<!--下面的这个文件并不存在于/js下，注释掉-->
+<!--<script src="<?php echo APP_URL ?>/js/tagcloud.jquery.js"></script>-->
 
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="<?php echo APP_URL?>/js/bootstrap.min.js" ></script>

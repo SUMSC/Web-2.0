@@ -39,12 +39,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="<?php echo APP_URL?>/">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#"> Link</a></li>
+        <li class="active"><a href="<?php echo APP_URL?>/">首页 <span class="sr-only">(current)</span></a></li>
+          <li><a href="<?php echo APP_URL?>/PfFaq/">电脑义修</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Unit <span class="caret"></span></a>
           <ul class="dropdown-menu">
-          <li><a href="<?php echo APP_URL?>/PfFaq/">Lu</a></li>
           <li><a href="<?php echo APP_URL?>/TU_Index/">Tu</a></li>
           <li><a href="<?php echo APP_URL?>/GT_Index/">Wu</a></li>
           <li><a href="<?php echo APP_URL?>/ACT_Index/">Gao</a></li>

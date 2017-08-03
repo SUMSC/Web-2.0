@@ -1,4 +1,7 @@
-
+<h2>开发中</h2>
+<pre>有没有脑子大的人来帮忙想想这个首页该做成什么样子？</pre>
+<pre>开发说明先拿掉了，太难看。</pre>
+<!--
 <h2>开发说明</h2>
 <pre>
 1. header.php 和 footer.php 从Index文件夹中加载(参考IndexView.class.php 的代码)。
@@ -39,4 +42,4 @@
 <a href="http://www.baidu.com"><h2>给吴刚的外部链接问题的解答</h2></a>
 <pre> 
 标题是指向百度首页的链接。外部链接需要写http://www.baidu.com 这一完整形式，否则默认是本站内链接，直接提交给localhost处理了。
-</pre>
+</pre>-->

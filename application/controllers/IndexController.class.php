@@ -2,11 +2,11 @@
 
 class IndexController extends Controller{
 
-    function consult(){
+    function index(){
 
         $this->assign('title', '首页');
         $this->assign('content', 'php MVC');
-        $this->render("Index");
+        $this->render("index");
     }
 
 

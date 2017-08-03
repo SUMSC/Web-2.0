@@ -36,12 +36,14 @@ function x(form)
     <thead>
         <colgroup>
             <col width="10%"></col>
-            <col width="20%"></col>
+            <col width="10%"></col>
+            <col width="35%"></col>
             <col></col>           
         </colgroup>
 
         <tr>
             <th>ID:</th>
+            <th></th>
             <th>Q:</th>
             <th>A:</th>
         </tr>

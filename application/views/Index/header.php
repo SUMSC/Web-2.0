@@ -46,7 +46,7 @@
           <ul class="dropdown-menu">
           <li><a href="<?php echo APP_URL?>/TU_Index/">Tu</a></li>
           <li><a href="<?php echo APP_URL?>/GT_Index/">Wu</a></li>
-          <li><a href="<?php echo APP_URL?>/ACT_Index/">Gao</a></li>
+          <li><a href="<?php echo APP_URL?>/ACT/">Gao</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="<?php echo APP_URL?>/GT_Index/book" >book</a></li>
             <li><a href="<?php echo APP_URL?>/GT_Index/software">software</a></li>

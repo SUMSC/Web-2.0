@@ -25,7 +25,7 @@ class UserController extends Controller{
             $data['username'] = $_POST['username'];
             $data['password'] = $_POST['password'];
         }
-        }
+        
         
         $tmp_data = array();
         $tmp_data['username'] = $data['username'];

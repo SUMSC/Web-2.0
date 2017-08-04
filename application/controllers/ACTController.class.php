@@ -9,7 +9,7 @@ class ACTController extends Controller{
  
         $this->assign('title', '首页');
  
-        $this->assign('content',‘php MVC’);
+        $this->assign('content','php MVC');
  
         $this->_view->render("index");
     }

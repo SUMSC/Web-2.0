@@ -22,7 +22,7 @@ a{
 #header{
    /* background: #222329;*/
     border-radius: 0px;
-    height: 80px;
+    /*height: 80px;手机端修正*/
     padding: 15px 20px;
     font-size: 1.1em;
 }

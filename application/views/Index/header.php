@@ -20,7 +20,8 @@
 
     </head>
 
-    <body onload="prettyPrint()">
+ <!--<body onload="prettyPrint()">  这函数谁写的？手机端加上这东西压根没法看-->
+    <body>
 
 <!-- header bar -->
 <nav class="navbar" id="header">
